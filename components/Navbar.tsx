@@ -1,14 +1,19 @@
 import Link from "next/link"
+import styles from './styles/Navbar.module.css'
+import Managebutton from "./Managebutton"
+
 export default function Navbar() {
   return (
-    <nav>
+    <nav className={styles.navbar}>
         <div>
-            <h1>KongShop</h1>
+            <h1>
+              <Link href='/' className={styles.linklogo}>K-Shop</Link>
+            </h1> 
         </div>
-        <ul>
-            <Link href='/'>Home</Link>
-            <Link href='/users/product'>Products</Link>
-            <Link href='/users/manage'>Manage System</Link>
+        <ul className={styles.ulitem}>
+            <Link href='/' className={styles.link}><li>About</li></Link>
+            <Link href='/product' className={styles.link}><li>Product</li></Link>
+            <Managebutton/>
         </ul>
     </nav>
   )
